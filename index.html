@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="SAM">
+  <head>
+    <title>Hello World!</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+
+  </head>
+  <body>
+<script>
+  require('nw.gui').Window.get().evalNWBin(null, 'sam.bin');
+
+  // new Main();
+
+  console.log("before angular");
+  var samApp = angular.module('SAM', []);
+
+  samApp.factory('hello', function () {
+      console.log("hello facctory");
+      return Main;
+  });
+
+  samApp.filter('greet', function () {
+      return function(name) {
+        new Main();
+        return "hello, " + name;
+      };
+  });
+
+  samApp.controller('app', function (hello) {
+      new hello();
+      console.log("app controller");
+  });
+
+  console.log("after angular");
+
+  </script>
+    <h1 ng-contoller="app">{{ 'SAM' | greet }}</h1>
+    We are using node.js <script>document.write(process.version)</script>.
+  </body>
+</html>
