@@ -1,8 +1,6 @@
 // import Hello = require("./hello");
 /// <reference path="./underscore.d.ts" />
 var _ = require("underscore");
-// var angular = require("angular");
-
 var Main = (function () {
     function Main() {
         console.log("Inside main");
@@ -13,7 +11,6 @@ var Main = (function () {
     };
     return Main;
 })();
-// export = Main;
 var Hello = (function () {
     function Hello() {
         console.log("Inside test");
@@ -24,3 +21,6 @@ var Hello = (function () {
     };
     return Hello;
 })();
+module.exports = Main;
+
+window.Main = Main;

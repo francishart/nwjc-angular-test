@@ -1,0 +1,1 @@
+browserify -r util -r debug -r util/ -r ./ts/services/HardwareService.ts:HardwareService -r ./ts/mediator/MessageDispatcher.ts:MD -p [tsify --target=ES5] -r ./ts/code/SamCodeService.ts:SamCodeService -p [tsify --target=ES5] -r ./ts/Hue/services/HueHardwareService.ts:HueHardwareService -p [tsify --target=ES5] > winJS/scripts/bundle.js
